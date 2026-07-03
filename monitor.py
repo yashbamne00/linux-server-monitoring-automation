@@ -14,11 +14,11 @@ status = subprocess.run(["systemctl","is-active","nginx"], capture_output=True, 
 def send_alert(text):
 	msg = EmailMessage()
 	msg["Subject"] = "WSL Test Alert Trigger"
-	msg["From"] = "yashbamne00@gmail.com"
-	msg["To"] = "yashbamne00@gmail.com"
+	msg["From"] = "user@gmail.com"
+	msg["To"] = "user@gmail.com"
 	msg.set_content(text)
 	with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-		server.login("yashbamne00@gmail.com", "zqmf xhvs biuc ueva")
+		server.login("user@gmail.com", "password")
 		server.send_message(msg)
 
 with open("reports/report.txt", "a") as file:
